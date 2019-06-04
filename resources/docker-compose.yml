@@ -1,0 +1,43 @@
+version:        '3'
+
+services:
+  jenkins:
+    build:
+      context:  jenkins/
+    volumes:
+      - "./jenkins/jenkins_home:/var/jenkins_home"
+    ports:
+      - "8080:8080"
+    networks:
+      - main
+
+  nexus:
+    build:
+      context:  nexus/
+    ports:
+      - "8081:8081"
+    networks:
+      - main
+
+#  gerrit:
+#    build:
+#      context:  gerrit/
+#    volumes:
+#     - git-volume:/var/gerrit/git
+#    #  - db-volume:/var/gerrit/db
+#    #  - index-volume:/var/gerrit/index
+#    ports:
+#      - "29418:29418"
+#      - "8083:8080"
+#    networks:
+#      - main
+
+networks:
+  main:
+    driver:     bridge
+
+#volumes:
+#  "jenkins_home":
+#  # db-volume:
+#  # index-volume:
+#  # cache-volume:

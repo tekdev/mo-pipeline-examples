@@ -1,0 +1,13 @@
+pipeline-stage-view:latest
+build-with-parameters:latest
+jira-steps:latest
+github:latest
+github-api:latest
+github-oauth:latest
+github-organization-folder:latest
+github-branch-source:latest
+credentials:latest
+credentials-binding:latest
+maven-plugin:latest
+ws-cleanup:latest
+build-name-setter:latest
